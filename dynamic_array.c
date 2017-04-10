@@ -68,7 +68,7 @@ double* push_back( dynamic_array* arr, double data )
 
 double pop_back( dynamic_array* arr )
 {
-	double r = *(arr->last - 1);
+	double r = *back( arr );
 	*(arr->last - 1) = 0.0;
 	--arr->last;
 	return r;
@@ -77,4 +77,14 @@ double pop_back( dynamic_array* arr )
 double index( dynamic_array* arr, int n )
 {
 	return arr->array[n];
+}
+
+double* front( dynamic_array* arr )
+{
+	return arr->array;
+}
+
+double* back( dynamic_array* arr )
+{
+	return arr->last - 1;
 }

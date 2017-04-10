@@ -20,5 +20,7 @@ void reserve( dynamic_array*, int );
 double* push_back( dynamic_array*, double );
 double pop_back( dynamic_array* );
 double index( dynamic_array*, int );
+double* front( dynamic_array* );
+double* back( dynamic_array* );
 
 #endif

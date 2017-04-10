@@ -16,6 +16,8 @@ int main()
 	for( int i = 0; i < d.capacity; ++i )
 		printf( "%lf ", index( &d, i ) );
 	printf( "\n" );
+
+	destruct( &d );
 	
 	return 0;
 }
