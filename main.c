@@ -6,10 +6,11 @@ int main()
 	dynamic_array d;
 	construct( &d );
 
-	for( int i = 0; i < d.capacity; ++i )
-		d.array[i] = 0.0 + i;
-	
-	resize( &d );
+	push_back( &d, 1.0 );	
+	push_back( &d, 2.0 );
+	push_back( &d, 3.0 );
+	push_back( &d, 4.0 );
+	push_back( &d, 5.0 );	
 	
 	for( int i = 0; i < d.capacity; ++i )
 		printf( "%lf ", d.array[i] );

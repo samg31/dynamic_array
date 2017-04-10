@@ -9,7 +9,7 @@ void construct( dynamic_array* arr )
 	arr->size = 0;
 	arr->first = arr->array;
 	arr->last = arr->array;
-	arr->limit = arr->array + (arr->capacity - 1);
+	arr->limit = arr->array + arr->capacity;
 }
 
 void destruct( dynamic_array* arr )
@@ -34,7 +34,7 @@ void resize( dynamic_array* arr )
 	
 	arr->first = arr->array;
 	arr->last = arr->array + arr->size;
-	arr->limit = arr->array + (arr->capacity - 1);
+	arr->limit = arr->array + arr->capacity;
 }
 
 void reserve( dynamic_array* arr, int n )
@@ -42,7 +42,7 @@ void reserve( dynamic_array* arr, int n )
 	double* temp;
 	temp = realloc( arr->array, arr->capacity * n * sizeof( double ) );
 
-	if( realloc == NULL )
+	if( temp == NULL )
 	{
 		printf( "unable to reserve %d elements in array %p\n", n, arr );
 		return;
@@ -50,5 +50,18 @@ void reserve( dynamic_array* arr, int n )
 
 	arr->first = arr->array;
 	arr->last = arr->array + arr->size;
-	arr->limit = arr->array + (arr->capacity - 1);
+	arr->limit = arr->array + arr->capacity;
+}
+
+double* push_back( dynamic_array* arr, double data )
+{
+	// if the array has run out of space, double it
+	if( arr->last == arr->limit )
+	{
+		resize( arr );
+	}
+
+	*(arr->last) = data;
+	++arr->size;
+	return arr->last++;
 }
