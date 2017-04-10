@@ -12,6 +12,7 @@ void construct( dynamic_array* arr )
 	arr->limit = arr->array + arr->capacity;
 }
 
+// 
 void destruct( dynamic_array* arr )
 {
 	free( arr->array );
@@ -66,6 +67,7 @@ double* push_back( dynamic_array* arr, double data )
 	return arr->last++;
 }
 
+// remove the last element and decrement the last pointer
 double pop_back( dynamic_array* arr )
 {
 	double r = *back( arr );
