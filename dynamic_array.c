@@ -73,3 +73,8 @@ double pop_back( dynamic_array* arr )
 	--arr->last;
 	return r;
 }
+
+double index( dynamic_array* arr, int n )
+{
+	return arr->array[n];
+}

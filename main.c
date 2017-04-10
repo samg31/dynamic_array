@@ -14,7 +14,7 @@ int main()
 	pop_back( &d );
 	
 	for( int i = 0; i < d.capacity; ++i )
-		printf( "%lf ", d.array[i] );
+		printf( "%lf ", index( &d, i ) );
 	printf( "\n" );
 	
 	return 0;
