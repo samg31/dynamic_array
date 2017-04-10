@@ -44,6 +44,10 @@ double* push_back( dynamic_array*, double );
 // returns the value of the removed element
 double pop_back( dynamic_array* );
 
+// insert element at position n
+// return a pointer to the inserted element
+double* insert( dynamic_array*, int, double );
+
 // returns the value at array[n]
 double index( dynamic_array*, int );
 

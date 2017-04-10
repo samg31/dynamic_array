@@ -76,6 +76,45 @@ double pop_back( dynamic_array* arr )
 	return r;
 }
 
+double* insert( dynamic_array* arr, int pos, double data )
+{
+	if( pos > arr->size )
+	{
+		printf( "error: insertion into unitialized memory.\n" );
+		return NULL;
+	}
+	
+	// if the array has run out of space, double it
+	if( arr->last == arr->limit )
+	{
+		resize( arr );
+	}
+
+	double* temp = malloc( arr->capacity * sizeof( double ) );
+	int i;
+
+	for( i = 0; i < pos; ++i )
+	{
+		temp[i] = arr->array[i];
+	}
+
+	temp[pos] = data;
+
+	for( i = pos + 1; i <= arr->last - arr->first; ++i )
+	{
+		temp[i] = arr->array[i - 1];
+	}
+		
+	arr->array = temp;
+	++arr->size;
+	
+	arr->first = arr->array;
+	arr->last = arr->array + arr->size;
+	arr->limit = arr->array + arr->capacity;
+
+	return arr->array + pos;
+}
+
 double index( dynamic_array* arr, int n )
 {
 	return arr->array[n];
