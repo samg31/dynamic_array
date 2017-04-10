@@ -78,6 +78,8 @@ double pop_back( dynamic_array* arr )
 
 double* insert( dynamic_array* arr, int pos, double data )
 {
+	// data can be inserted anywhere within the array
+	// as well as at the front or back
 	if( pos > arr->size )
 	{
 		printf( "error: insertion into unitialized memory.\n" );
@@ -93,18 +95,21 @@ double* insert( dynamic_array* arr, int pos, double data )
 	double* temp = malloc( arr->capacity * sizeof( double ) );
 	int i;
 
+	// copy everything before the insertion point into the new array
 	for( i = 0; i < pos; ++i )
 	{
 		temp[i] = arr->array[i];
 	}
 
+	// make the insertion at the specified point
 	temp[pos] = data;
 
+	// copy the remainder of the array into the new array
 	for( i = pos + 1; i <= arr->last - arr->first; ++i )
 	{
 		temp[i] = arr->array[i - 1];
 	}
-		
+
 	arr->array = temp;
 	++arr->size;
 	
@@ -112,6 +117,7 @@ double* insert( dynamic_array* arr, int pos, double data )
 	arr->last = arr->array + arr->size;
 	arr->limit = arr->array + arr->capacity;
 
+	// return a pointer to the inserted element
 	return arr->array + pos;
 }
 
