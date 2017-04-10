@@ -17,7 +17,7 @@ void resize( dynamic_array* arr )
 
 	if( temp == NULL )
 	{
-		printf( "unable to reallocate array %d\n", arr );
+		printf( "unable to reallocate array %p\n", arr );
 		return;
 	}
 
