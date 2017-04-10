@@ -65,3 +65,11 @@ double* push_back( dynamic_array* arr, double data )
 	++arr->size;
 	return arr->last++;
 }
+
+double pop_back( dynamic_array* arr )
+{
+	double r = *(arr->last - 1);
+	*(arr->last - 1) = 0.0;
+	--arr->last;
+	return r;
+}

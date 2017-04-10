@@ -10,7 +10,8 @@ int main()
 	push_back( &d, 2.0 );
 	push_back( &d, 3.0 );
 	push_back( &d, 4.0 );
-	push_back( &d, 5.0 );	
+	push_back( &d, 5.0 );
+	pop_back( &d );
 	
 	for( int i = 0; i < d.capacity; ++i )
 		printf( "%lf ", d.array[i] );
