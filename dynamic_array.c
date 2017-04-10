@@ -1,3 +1,6 @@
+// written by Sam Goodrick
+// contact at sdg31@zips.uakron.edu
+
 #include "dynamic_array.h"
 #include <malloc.h>
 

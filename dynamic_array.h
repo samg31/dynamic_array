@@ -1,6 +1,11 @@
+// written by Sam Goodrick
+// contact at sdg31@zips.uakron.edu
+
 #ifndef DYNAMIC_ARRAY_H
 #define DYNAMIC_ARRAY_H
 
+// THIS STRUCTURE ABSTRACTS DYNAMICALLY ALLOCATED MEMORY
+// <<DO NOT>> ACCESS MEMBERS DIRECTLY
 typedef struct
 {
 	double* array;
