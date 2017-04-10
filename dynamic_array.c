@@ -10,6 +10,11 @@ void construct( dynamic_array* arr )
 		arr->array[i] = 0.0;
 }
 
+void destruct( dynamic_array* arr )
+{
+	free( arr->array );
+}
+
 void resize( dynamic_array* arr )
 {
 	double* temp;
